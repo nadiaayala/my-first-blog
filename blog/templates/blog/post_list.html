@@ -10,8 +10,18 @@
         <h2> Everything about beauty, simplied.</h2>
     </div>
 
+    {% for post in posts %}
+        <div>
+            <p> published date: {{post.published_date}}</p>
+            <h2> <a href="#"> {{post.title}}</a></h2>
+            <p> {{post.text|linebreaksbr}}</p> 
+            <!-- |linebreaks está passando o texto do post por um filtro, convertendo quebras de linha em parágrafos. -->
+        </div>
+    {% endfor %}
 
-    <div>
+
+
+    <!-- <div>
         <h2><a href="">Why so hard?</a></h2>
         <p> Have you ever wondered why all these bloggers out there look a lot like salespeople? </p>
         <p> It's because <em> they are.</em></p>
@@ -23,7 +33,7 @@
             <p> Here are some tips... </p>
             <p> check on ...! </p>
             <p>published: 15.06.2019, 12:10</p>
-        </div>
+        </div> -->
 </body>
 
 </html>
