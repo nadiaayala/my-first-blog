@@ -1,0 +1,50 @@
+{% load static %}
+<html>
+
+<head>
+    <title> Nadia's blog</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<body>
+        <div class="page-header">
+            <h1><a href="/">Nadia's blog</a></h1>
+            <h2> Everything about beauty, simplied.</h2>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+
+<!-- <body>
+    <div class="page-header">
+        <h1> Nadia's blog</h1>
+        <h2> Everything about beauty, simplied.</h2>
+    </div>
+
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                    </div>
+                    <h2><a href="">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body> -->
+
+</html>

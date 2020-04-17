@@ -1,27 +1,13 @@
-<html>
+{% extends 'blog/base.html' %}
 
-<head>
-    <title> Nadia's blog</title>
-</head>
-
-<body>
-    <div>
-        <h1> Nadia's blog</h1>
-        <h2> Everything about beauty, simplied.</h2>
-    </div>
-
-
+{% block content %}
     {% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
     {% endfor %}
-
-
-
-    
-</body>
-
-</html>
+{% endblock %}
